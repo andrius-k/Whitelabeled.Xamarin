@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug_Staging</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhone</Platform>
+    <ProjectGuid>{91F45D57-354B-4418-9E24-FF0473B59AC4}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Whitelabeled.Droid</RootNamespace>
+    <AssemblyName>Whitelabeled.Droid</AssemblyName>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <AndroidManagedSymbols>false</AndroidManagedSymbols>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>BeforeBuild</type>
+          <command>/bin/sh GenerateAndroidManifest ${ProjectConfigName}</command>
+          <workingdir>${ProjectDir}/Properties</workingdir>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Staging|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug_Staging</OutputPath>
+    <DefineConstants>DEBUG;STAGING;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
+    <AndroidSupportedAbis>armeabi-v7a</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Production|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug_Production</OutputPath>
+    <DefineConstants>DEBUG;PRODUCTION</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
+    <AndroidSupportedAbis>armeabi-v7a</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Dev|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug_Dev</OutputPath>
+    <DefineConstants>DEBUG;DEVELOPMENT;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <AndroidSupportedAbis>x86_64</AndroidSupportedAbis>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Staging|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug_Staging</OutputPath>
+    <DefineConstants>DEBUG;STAGING;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
+    <AndroidSupportedAbis>x86_64</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Production|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug_Production</OutputPath>
+    <DefineConstants>DEBUG;PRODUCTION</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
+    <AndroidSupportedAbis>x86_64</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Dev|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release_Dev</OutputPath>
+    <DefineConstants>DEVELOPMENT;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>armeabi-v7a;x86;armeabi</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Staging|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release_Staging</OutputPath>
+    <DefineConstants>STAGING;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>armeabi-v7a;x86;armeabi</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Production|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release_Production</OutputPath>
+    <DefineConstants>PRODUCTION;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>armeabi-v7a;x86;armeabi</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Dev|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release_Dev</OutputPath>
+    <DefineConstants>DEVELOPMENT;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>x86_64</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Staging|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release_Staging</OutputPath>
+    <DefineConstants>STAGING;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>x86_64</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release_Production|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release_Production</OutputPath>
+    <DefineConstants>PRODUCTION;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>x86_64</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_Dev|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug_Dev</OutputPath>
+    <DefineConstants>DEBUG;DEVELOPMENT;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
+    <AndroidSupportedAbis>armeabi-v7a</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Whitelabeled\Whitelabeled.csproj">
+      <Project>{682F8AAA-2B3B-4F34-A93A-E4931E1F55EE}</Project>
+      <Name>Whitelabeled</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\values\Strings.xml" />
+
+    <AndroidResource Include="Resources\mipmap-hdpi\Icon_Dev.png" Condition="'$(Configuration)' == 'Release_Dev' Or '$(Configuration)' == 'Debug_Dev'">
+      <LogicalName>mipmap-hdpi\Icon.png</LogicalName>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-mdpi\Icon_Dev.png" Condition="'$(Configuration)' == 'Release_Dev' Or '$(Configuration)' == 'Debug_Dev'">
+      <LogicalName>mipmap-mdpi\Icon.png</LogicalName>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xhdpi\Icon_Dev.png" Condition="'$(Configuration)' == 'Release_Dev' Or '$(Configuration)' == 'Debug_Dev'">
+      <LogicalName>mipmap-xhdpi\Icon.png</LogicalName>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon_Dev.png" Condition="'$(Configuration)' == 'Release_Dev' Or '$(Configuration)' == 'Debug_Dev'">
+      <LogicalName>mipmap-xxhdpi\Icon.png</LogicalName>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon_Dev.png" Condition="'$(Configuration)' == 'Release_Dev' Or '$(Configuration)' == 'Debug_Dev'">
+      <LogicalName>mipmap-xxxhdpi\Icon.png</LogicalName>
+    </AndroidResource>
+
+    <AndroidResource Include="Resources\mipmap-hdpi\Icon_Staging.png" Condition="'$(Configuration)' == 'Release_Staging' Or '$(Configuration)' == 'Debug_Staging'">
+      <LogicalName>mipmap-hdpi\Icon.png</LogicalName>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-mdpi\Icon_Staging.png" Condition="'$(Configuration)' == 'Release_Staging' Or '$(Configuration)' == 'Debug_Staging'">
+      <LogicalName>mipmap-mdpi\Icon.png</LogicalName>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xhdpi\Icon_Staging.png" Condition="'$(Configuration)' == 'Release_Staging' Or '$(Configuration)' == 'Debug_Staging'">
+      <LogicalName>mipmap-xhdpi\Icon.png</LogicalName>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon_Staging.png" Condition="'$(Configuration)' == 'Release_Staging' Or '$(Configuration)' == 'Debug_Staging'">
+      <LogicalName>mipmap-xxhdpi\Icon.png</LogicalName>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon_Staging.png" Condition="'$(Configuration)' == 'Release_Staging' Or '$(Configuration)' == 'Debug_Staging'">
+      <LogicalName>mipmap-xxxhdpi\Icon.png</LogicalName>
+    </AndroidResource>
+
+    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" Condition="'$(Configuration)' == 'Release_Production' Or '$(Configuration)' == 'Debug_Production'" />
+    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" Condition="'$(Configuration)' == 'Release_Production' Or '$(Configuration)' == 'Debug_Production'" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" Condition="'$(Configuration)' == 'Release_Production' Or '$(Configuration)' == 'Debug_Production'" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" Condition="'$(Configuration)' == 'Release_Production' Or '$(Configuration)' == 'Debug_Production'" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" Condition="'$(Configuration)' == 'Release_Production' Or '$(Configuration)' == 'Debug_Production'" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\mipmap-hdpi\" />
+    <Folder Include="Resources\mipmap-mdpi\" />
+    <Folder Include="Resources\mipmap-xhdpi\" />
+    <Folder Include="Resources\mipmap-xxhdpi\" />
+    <Folder Include="Resources\mipmap-xxxhdpi\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>
