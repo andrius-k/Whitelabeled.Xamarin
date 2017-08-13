@@ -1,0 +1,6 @@
+Sample project showing how to white-label Xamarin iOS and Android apps based on build configuration without needing to change Info.plist or AndroidManifest.xml files.
+
+Tutorials explaining the solutions are in my blog:
+
+iOS: http://applications.lt/white-labeling-xamarin-ios-apps/
+Android: http://applications.lt/white-labeling-xamarin-android-apps/
