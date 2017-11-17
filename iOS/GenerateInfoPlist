@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Get content of original Info.plist file
+originalFileContent="$(cat Info.plist)"
+
+# Save build configuration passed by IDE
+buildConfiguration=$1
+
+# Get CFBundleIdentifier value from original Info.plist file
+bundleId=$(defaults read $(pwd)/Info CFBundleIdentifier)
+
+# Overwrite Info.Generated.plist with content of original file
+echo $originalFileContent > Info.Generated.plist
+
+# Append appropriate prefix to CFBundleIdentifier
+# and replace iconAssets value
+if [ $buildConfiguration = "Debug_Dev" ] || [ $buildConfiguration = "Release_Dev" ]; then
+	bundleId+="-development"
+	iconAssets="Assets.xcassets/AppIcon-Dev.appiconset"
+elif [ $buildConfiguration = "Debug_Staging" ] || [ $buildConfiguration = "Release_Staging" ]; then
+	bundleId+="-staging"
+	iconAssets="Assets.xcassets/AppIcon-Staging.appiconset"
+else
+	iconAssets="Assets.xcassets/AppIcon-Production.appiconset"
+fi
+
+# replace CFBundleIdentifier
+plutil -replace CFBundleIdentifier -string $bundleId Info.Generated.plist
+
+# Use command below if binary .plist format is needed
+#defaults write $(pwd)/Info.Generated CFBundleIdentifier $bundleId
+
+# replace XSAppIconAssets
+plutil -replace XSAppIconAssets -string $iconAssets Info.Generated.plist
+
+# Use command below if binary .plist format is needed
+#defaults write $(pwd)/Info.Generated XSAppIconAssets $iconAssets
